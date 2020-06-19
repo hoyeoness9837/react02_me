@@ -14,13 +14,9 @@ class App extends Component {
     users: [],
   };
 
-
-
-
   handleInputChange = (event) => {
     this.setState({
-
-      //event.target.name equal to the input values.
+      //event.target.name equal to the input values in right place.
       [event.target.name]: event.target.value,
     });
   };
@@ -64,10 +60,12 @@ class App extends Component {
           handleInputChange={this.handleInputChange}
           handleSubmit={this.handleSubmit}
         />
+
+        {/* this will let you create multiple cards and the card will not appear as long as you don't submit. */}
         {this.state.users.map((user) => (
           <Card user={user} />
         ))}
-      </>
+      </>-
     )
   }
 }
